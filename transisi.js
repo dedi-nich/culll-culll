@@ -88,8 +88,8 @@ var PageTransitions = (function () {
                 outClass = 'halaman-rotateFoldRight';
                 inClass = 'halaman-moveFromLeftFade halaman-delay200';
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml15 .word',
                         scale: [14, 1],
@@ -106,8 +106,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml16 .letter',
                         translateY: [-100, 0],
@@ -123,8 +123,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml11 .line',
                         scaleY: [0, 1],
@@ -160,8 +160,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml9 .letter',
                         scale: [0, 1],
@@ -183,8 +183,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml2 .letter',
                         scale: [4, 1],
@@ -203,12 +203,12 @@ var PageTransitions = (function () {
                 ml4.scaleIn = [0.2, 1];
                 ml4.scaleOut = 3;
                 ml4.durationIn = 700;
-                ml4.durationOut = 500;
-                ml4.delay = 1100;
+                ml4.durationOut = 1000;
+                ml4.delay = 100;
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml4 .letters-1',
                         opacity: ml4.opacityIn,
@@ -240,6 +240,18 @@ var PageTransitions = (function () {
                         duration: ml4.durationIn
                     }).add({
                         targets: '.ml4 .letters-3',
+                        opacity: 0,
+                        scale: ml4.scaleOut,
+                        duration: ml4.durationOut,
+                        easing: "easeInExpo",
+                        delay: ml4.delay
+                    }).add({
+                        targets: '.ml4 .letters-4',
+                        opacity: ml4.opacityIn,
+                        scale: ml4.scaleIn,
+                        duration: ml4.durationIn
+                    }).add({
+                        targets: '.ml4 .letters-4',
                         opacity: 0,
                         scale: ml4.scaleOut,
                         duration: ml4.durationOut,
@@ -259,8 +271,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml12 .letter',
                         translateX: [40, 0],
@@ -274,9 +286,15 @@ var PageTransitions = (function () {
                         opacity: [1, 1],
                         easing: "easeInExpo",
                         duration: 1100,
-                        delay: (el, i) => 100 + 30 * i
+                        delay: (el, i) => 150 + 30 * i
                     });
+
+                setTimeout(() => {
+                    // Masukkan kode yang menggulir ke slide berikutnya di sini
+                }, 3000); // Delay selama 3 detik, sesuaikan dengan kebutuhan
+
                 break;
+
             case 8:
                 outClass = 'halaman-rotateRoomBottomOut halaman-ontop';
                 inClass = 'halaman-rotateRoomBottomIn';
@@ -284,8 +302,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml14 .line',
                         scaleX: [0, 1],
@@ -317,8 +335,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml7 .letter',
                         translateY: ["1.1em", 0],
@@ -345,8 +363,8 @@ var PageTransitions = (function () {
                 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
                 anime.timeline({
-                        loop: false
-                    })
+                    loop: false
+                })
                     .add({
                         targets: '.ml13 .letter',
                         translateY: [100, 0],
@@ -409,8 +427,8 @@ var textWrapper = document.querySelector('.ml1 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({
-        loop: false
-    })
+    loop: false
+})
     .add({
         targets: '.ml1 .letter',
         scale: [0.3, 1],
